@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'weatherman.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'localhost',
+        'PORT': 54321,
+        'USER': 'weather',
+        'PASSWORD': 'weather',
+        'NAME': 'weatherman',
     }
 }
 
