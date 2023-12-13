@@ -1,6 +1,7 @@
 import requests
 from django.shortcuts import render
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 
 from .models import Users
@@ -27,5 +28,6 @@ def show_main(request):
     return render(request, "index.html", context)
 
 
+@login_required
 def profile_view(request):
     return render(request, "profile.html")
