@@ -10,6 +10,7 @@ appid = settings.OPENWEATHERMAP_API_TOKEN
 
 
 def show_main(request):
+    print("Test test test")
 
     res = requests.get("http://api.openweathermap.org/data/2.5/find",
             params={'q': city, 'type': 'like', 'units': 'metric', 'APPID': appid})
@@ -24,3 +25,7 @@ def show_main(request):
     context['temperature_moscow'] = current_temperature
 
     return render(request, "index.html", context)
+
+
+def profile_view(request):
+    return render(request, "profile.html")
